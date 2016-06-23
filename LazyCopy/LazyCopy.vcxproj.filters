@@ -15,15 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="lazycopy-files\int.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="lazycopy-files\array.cpp">
+    <ClCompile Include="lazycopy-files\driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lazycopy-files\driver.cpp">
+    <ClCompile Include="lazycopy-files\int.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lazycopy-files\array.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -76,5 +74,13 @@
     <None Include="lazycopy-files\out12">
       <Filter>Resource Files</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lazycopy-files\int.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lazycopy-files\array.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

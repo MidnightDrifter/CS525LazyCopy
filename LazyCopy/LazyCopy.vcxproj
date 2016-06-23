@@ -110,11 +110,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="lazycopy-files\int.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="lazycopy-files\array.cpp" />
     <ClCompile Include="lazycopy-files\driver.cpp" />
+    <ClCompile Include="lazycopy-files\int.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="lazycopy-files\handout.pdf" />
@@ -133,6 +131,10 @@
     <None Include="lazycopy-files\out7" />
     <None Include="lazycopy-files\out8" />
     <None Include="lazycopy-files\out9" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lazycopy-files\array.h" />
+    <ClInclude Include="lazycopy-files\int.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

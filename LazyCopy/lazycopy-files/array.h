@@ -5,33 +5,36 @@
 #include <stdio.h>
 namespace CS225 {
 	class ElementProxy;
-    class Array {
-        public:
-			Array() : size(0), data( new Integer[]), counter(&1) {}
-			Array(int s) : size(s), data(new Integer[s]), counter(&1) {}
-			Array(Array const& a) : size(a.size), data(a.data), counter((*a.counter)+1) { (*a.counter)+=1}
-			~Array();
 
-			
-			const ElementProxy operator[](long pos);
-			Integer operator[](long pos) const;
+	class Array {
+		friend class ElementProxy;
+	public:
+		Array() : size(NULL), data(NULL), counter(NULL) { *counter = 1;  *size = 0; }
+		Array(int s) : size(NULL), data(new Integer[s]), counter(NULL) { *counter = 1;   *size = s; }
+		Array(Array const& a) : size(a.size), data(a.data), counter(NULL) { (*a.counter) += 1;  (this->counter) = a.counter; }
+		~Array();
 
-			friend std::ostream& operator<<(std::ostream &out, Array const& array);
-			void Array Insert(int pos, Integer const& val);
-			Array const& DeepCopy(Array const& a);
-        private:
-            int size;
-			Integer[]  data;
-			int* counter;
-    };
+
+		const ElementProxy operator[](long pos) { return ElementProxy(*this, pos); }
+		Integer operator[](long pos) const { return data[pos]; }
+
+		friend std::ostream& operator<<(std::ostream &out, Array const& array);
+		void Insert(int pos, Integer const& val);
+		Array const& DeepCopy(Array const& a);
+	private:
+		int* size;
+		Integer* data;
+		int* counter;
+	};
 
 
 
 
 
 	class ElementProxy {
+		//friend class Array;
 	private:
-		SparseVector &v;
+		Array &v;
 		long pos;
 
 
@@ -46,7 +49,7 @@ namespace CS225 {
 		void setPos(long pos);
 		void setArray(Array& v);
 		long getPos() const;
-		Array& getVector() const;
+		Array& getArray() const;
 
 		//friend ElementProxy operator*(int t, ElementProxy& p);
 
@@ -69,14 +72,14 @@ namespace CS225 {
 			return *this;
 
 		}
-		
+
 
 		long getPos() const
 		{
 			return this->pos;
 		}
 
-		Array& getVector() const
+		Array& getArray() const
 		{
 			return this->v;
 		}
@@ -86,7 +89,7 @@ namespace CS225 {
 			this->pos = pos;
 		}
 
-		void setVector(SparseVector& v)
+		void setArray(Array& v)
 		{
 			this->v = v;
 		}
@@ -99,10 +102,6 @@ namespace CS225 {
 		// .......
 
 	};
-
-
-
-
 
 
 
