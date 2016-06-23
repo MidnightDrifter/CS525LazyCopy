@@ -2,33 +2,33 @@
 #define ARRAY_H
 #include <fstream> // std::ostream
 #include "int.h"
-#include <stdio.h>
 namespace CS225 {
-	class ElementProxy;
-
+	
+	
 	class Array {
 		friend class ElementProxy;
 	public:
-		Array() : size(NULL), data(NULL), counter(NULL) { *counter = 1;  *size = 0; }
-		Array(int s) : size(NULL), data(new Integer[s]), counter(NULL) { *counter = 1;   *size = s; }
-		Array(Array const& a) : size(a.size), data(a.data), counter(NULL) { (*a.counter) += 1;  (this->counter) = a.counter; }
-		~Array();
+		Array();
+		Array(int s);
+		Array(const Array& a);
+
+		const Array& operator=(const Array& a);
+		int getSize() const;
+		int* getCounter();
+		int getCounterValue() const;
+	friend	std::ostream& operator<<(std::ostream& out, Array const& a);
+
+	void Insert(int pos, Integer const& val);
+
+	const ElementProxy operator[](long pos);
+	Integer operator[](long pos) const;
 
 
-		const ElementProxy operator[](long pos) { return ElementProxy(*this, pos); }
-		Integer operator[](long pos) const { return data[pos]; }
-
-		friend std::ostream& operator<<(std::ostream &out, Array const& array);
-		void Insert(int pos, Integer const& val);
-		Array const& DeepCopy(Array const& a);
 	private:
-		int* size;
+		int size;
 		Integer* data;
 		int* counter;
-	};
-
-
-
+    };
 
 
 	class ElementProxy {
@@ -46,10 +46,7 @@ namespace CS225 {
 		{
 
 		}
-		void setPos(long pos);
-		void setArray(Array& v);
-		long getPos() const;
-		Array& getArray() const;
+		
 
 		//friend ElementProxy operator*(int t, ElementProxy& p);
 
@@ -102,34 +99,5 @@ namespace CS225 {
 		// .......
 
 	};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 #endif

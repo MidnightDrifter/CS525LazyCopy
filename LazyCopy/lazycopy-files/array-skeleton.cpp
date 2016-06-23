@@ -5,8 +5,6 @@ namespace CS225 {
 
 
 
-
-
     // Array class implementation
     
     std::ostream& operator<<( std::ostream &out, Array const& array ) {
