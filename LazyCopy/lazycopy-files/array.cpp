@@ -14,7 +14,7 @@ namespace CS225 {
 	int* Array::getCounter() { return counter; }
 	int Array::getCounterValue() const { return *counter; }
 
-	const ElementProxy Array::operator[](long pos) { return ElementProxy(*this, pos); }
+	const ElementProxy& Array::operator[](long pos) { return ElementProxy(*this, pos); }
 	Integer Array::operator[](long pos) const { return data[pos]; }
 
 

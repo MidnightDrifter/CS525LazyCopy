@@ -16,11 +16,12 @@ namespace CS225 {
 		int getSize() const;
 		int* getCounter();
 		int getCounterValue() const;
+
 	friend	std::ostream& operator<<(std::ostream& out, Array const& a);
 
 	void Insert(int pos, Integer const& val);
 
-	const ElementProxy operator[](long pos);
+	const ElementProxy& operator[](long pos);
 	Integer operator[](long pos) const;
 
 
