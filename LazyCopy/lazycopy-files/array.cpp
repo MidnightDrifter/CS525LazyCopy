@@ -2,8 +2,25 @@
 
 namespace CS225 {
 
+	Integer* Array::DeepCopy()
+	{
+		Integer* ret = new Integer[this->getSize()];
+		for (int i = 0; i < this->getSize(); ++i)
+		{
+			ret[i] = this->data[i];
+		}
+		return ret;
+	}
 
+	void Array::DeleteData()
+	{
+		/*for (int i = 0; i < this->getSize(); ++i)
+		{
+			delete data[i];
+		}*/
+		delete[] data;
 	
+	}
 
 	Array::Array() : size(0), data(NULL), counter(NULL) { }
 	Array::Array(int s) : size(s), data(new Integer[s]), counter(new int(1)) {}
@@ -14,7 +31,7 @@ namespace CS225 {
 	int* Array::getCounter() { return counter; }
 	int Array::getCounterValue() const { return *counter; }
 
-	const ElementProxy& Array::operator[](long pos) { return ElementProxy(*this, pos); }
+	const ElementProxy Array::operator[](long pos) { return ElementProxy(*this, pos); }
 	Integer Array::operator[](long pos) const { return data[pos]; }
 
 
@@ -61,7 +78,7 @@ namespace CS225 {
             delete [] data;
             data = new_data;
         }
-        //std::cout << "in function " << __FUNCTION__ << ": insert element at position " << pos << std::endl;
+       // std::cout << "in function " << __FUNCTION__ << ": insert element at position " << pos << std::endl;
         data[ pos ] = val;
     }
 

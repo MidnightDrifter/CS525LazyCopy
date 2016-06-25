@@ -21,7 +21,7 @@ namespace CS225 {
 
 	void Insert(int pos, Integer const& val);
 
-	const ElementProxy& operator[](long pos);
+	const ElementProxy operator[](long pos);
 	Integer operator[](long pos) const;
 
 
@@ -29,6 +29,11 @@ namespace CS225 {
 		int size;
 		Integer* data;
 		int* counter;
+
+		Integer* DeepCopy();
+		void DeleteData();
+
+
     };
 
 
