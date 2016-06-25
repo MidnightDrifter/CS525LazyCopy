@@ -11,11 +11,13 @@ namespace CS225 {
 		Array();
 		Array(int s);
 		Array(const Array& a);
+		~Array();
 
 		const Array& operator=(const Array& a);
 		int getSize() const;
-		int* getCounter();
+		int* getCounter() const;
 		int getCounterValue() const;
+		Integer* getData() const;
 
 	friend	std::ostream& operator<<(std::ostream& out, Array const& a);
 
@@ -61,15 +63,15 @@ namespace CS225 {
 			return this->v.data[pos];
 		}
 
-		ElementProxy& operator=(int x)
+		ElementProxy& operator=(int x)  //Edits array object for sure
 		{
 			//this->v.Insert(x, this->getPos());
 			this->v.Insert(this->getPos(), x);
 			return *this;
 		}
 
-		const ElementProxy& operator=(const int x) const
-		{
+		const ElementProxy& operator=(const int x) const  //Edits array object for sure (?)
+		{ 
 			//this->v.Insert(x, this->getPos());
 			this->v.Insert(this->getPos(), x);
 			return *this;
