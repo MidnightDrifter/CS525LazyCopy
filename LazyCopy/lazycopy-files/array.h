@@ -66,14 +66,14 @@ namespace CS225 {
 		ElementProxy& operator=(int x)  //Edits array object for sure
 		{
 			//this->v.Insert(x, this->getPos());
-			this->v.Insert(this->getPos(), x);
+			this->v.Insert(this->getPos(), (x));
 			return *this;
 		}
 
 		const ElementProxy& operator=(const int x) const  //Edits array object for sure (?)
 		{ 
 			//this->v.Insert(x, this->getPos());
-			this->v.Insert(this->getPos(), x);
+			this->v.Insert(this->getPos(),(x));
 			return *this;
 
 		}

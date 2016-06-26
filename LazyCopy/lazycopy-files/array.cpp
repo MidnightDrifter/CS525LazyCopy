@@ -22,11 +22,13 @@ namespace CS225 {
 	
 	}
 
-	Array::Array() : size(0), data(NULL), counter(NULL) { }
+	Array::Array() : size(0), data(NULL), counter(new int(1)) { }
 	Array::Array(int s) : size(s), data(new Integer[s]), counter(new int(1)) {}
 	//Array::Array(const Array& a) : size(a.getSize()), data(new Integer[size]), counter(new int(1)) { for (int i = 0; i < size; i++) { this->data[i] = a.data[i]; } }  //Deep copy
-	Array::Array(const Array& a) : size(a.getSize()), data(a.getData()), counter(a.getCounter()) { *(this->counter)++; }
-	Array::~Array() { if (--(*counter) <= 0) { delete counter;  delete[] data; }   }
+	Array::Array(const Array& a) : size(a.getSize()), data(a.getData()), counter(a.getCounter()) { (*(this->counter)) +=1; }
+	Array::~Array() { if (--(*counter) <= 0) { delete counter;    delete[] data; } } //for (int i = 0; i < size; i++) { delete data[i]; }
+	
+	
 
 	int Array::getSize() const { return size; }
 	int* Array::getCounter() const { return counter; }
