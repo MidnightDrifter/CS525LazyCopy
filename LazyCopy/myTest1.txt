@@ -1,7 +1,7 @@
 create empty array
-create Integer(1)
+create CS225::Integer(1)
 Integer default ctor (1)
-insert Integer(1) at 5
+insert CS225::Integer(1) at 5
 Integer default ctor (0)
 Integer default ctor (0)
 Integer default ctor (0)
@@ -13,10 +13,9 @@ Integer default ctor (0)
 Integer default ctor (0)
 Integer default ctor (0)
 Integer default ctor (0)
-in function CS225::Array::Insert: insert element at position 5
+in function Insert: insert element at position 5
 Integer assignment (0<--1)
 Integer default ctor (3)
-Integer default ctor (3)
-in function CS225::Array::Insert: insert element at position 3
+in function Insert: insert element at position 3
 Integer assignment (0<--3)
 array = 0 0 0 3 0 1 0 0 0 0 0 

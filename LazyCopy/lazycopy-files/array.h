@@ -2,9 +2,9 @@
 #define ARRAY_H
 #include <fstream> // std::ostream
 #include "int.h"
-
+namespace CS225 {
 	class ElementProxy;
-	
+
 	class Array {
 		friend class ElementProxy;
 	public:
@@ -19,13 +19,15 @@
 		int getCounterValue() const;
 		Integer* getData() const;
 
-	friend	std::ostream& operator<<(std::ostream& out, Array const& a);
+		friend	std::ostream& operator<<(std::ostream& out, Array const& a);
 
-	void Insert(int pos, Integer const& val);
+		void Insert(int pos, Integer const& val);
 
-	const ElementProxy operator[](long pos);
-	Integer operator[](long pos) const;
+		const ElementProxy operator[](long pos);
+		//Integer operator[](long pos) const;
+		const Integer& operator[](long pos)const;
 
+	
 
 	private:
 		int size;
@@ -36,7 +38,7 @@
 		void DeleteData();
 
 
-    };
+	};
 
 
 	class ElementProxy {
@@ -54,7 +56,7 @@
 		{
 
 		}
-		
+
 
 		//friend ElementProxy operator*(int t, ElementProxy& p);
 
@@ -63,19 +65,31 @@
 			return this->v.data[pos];
 		}
 
-		ElementProxy& operator=(int x)  
+		ElementProxy& operator=(int x)
 		{
 			//this->v.Insert(x, this->getPos());
 			this->v.Insert(this->getPos(), (x));
 			return *this;
 		}
 
-		const ElementProxy& operator=(const int x) const  
-		{ 
+		const ElementProxy& operator=(const int x) const
+		{
 			//this->v.Insert(x, this->getPos());
-			this->v.Insert(this->getPos(),(x));
+			this->v.Insert(this->getPos(), (x));
 			return *this;
 
+		}
+
+		const ElementProxy& operator=(Integer& x)
+		{
+			this->v.Insert(this->getPos(), x);
+			return *this;
+		}
+
+		const ElementProxy& operator=(const Integer& x) const
+		{
+			this->v.Insert(this->getPos(), x);
+			return *this;
 		}
 
 
@@ -107,5 +121,5 @@
 		// .......
 
 	};
-
+}
 #endif
