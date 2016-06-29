@@ -2,8 +2,8 @@
 #define ARRAY_H
 #include <fstream> // std::ostream
 #include "int.h"
-namespace CS225 {
-	
+
+	class ElementProxy;
 	
 	class Array {
 		friend class ElementProxy;
@@ -63,14 +63,14 @@ namespace CS225 {
 			return this->v.data[pos];
 		}
 
-		ElementProxy& operator=(int x)  //Edits array object for sure
+		ElementProxy& operator=(int x)  
 		{
 			//this->v.Insert(x, this->getPos());
 			this->v.Insert(this->getPos(), (x));
 			return *this;
 		}
 
-		const ElementProxy& operator=(const int x) const  //Edits array object for sure (?)
+		const ElementProxy& operator=(const int x) const  
 		{ 
 			//this->v.Insert(x, this->getPos());
 			this->v.Insert(this->getPos(),(x));
@@ -107,5 +107,5 @@ namespace CS225 {
 		// .......
 
 	};
-}
+
 #endif

@@ -2,7 +2,7 @@
 #define INTEGER_H
 #include <fstream> // std::ostream
 
-namespace CS225 {
+
     class Integer {
         public:
             static bool noise; // public
@@ -15,5 +15,5 @@ namespace CS225 {
         private:
             int data;
     };
-}
+
 #endif

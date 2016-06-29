@@ -1,6 +1,7 @@
 #include "array.h"
+#include <iostream>
+#include <iomanip>
 
-namespace CS225 {
 
 	Integer* Array::DeepCopy()
 	{
@@ -86,7 +87,9 @@ namespace CS225 {
 				delete[] data;
 				data = new_data;
 			}
-			// std::cout << "in function " << __FUNCTION__ << ": insert element at position " << pos << std::endl;
+			 //std::cout << "in function " << __FUNCTION__ << ": insert element at position " << pos << std::endl;
+			std::cout << "in function Insert: insert element at position " << pos << std::endl;
+
 			data[pos] = val;
 		}
 
@@ -103,4 +106,4 @@ namespace CS225 {
 		}
     }
 
-}
+

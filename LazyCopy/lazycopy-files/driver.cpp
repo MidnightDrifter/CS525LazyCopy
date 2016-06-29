@@ -5,39 +5,39 @@
 void test0() {
     //std::cout << "in function " << __FUNCTION__ << ": " << "create empty array" << std::endl;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     std::cout << "create Integer(1)" << std::endl;
-    CS225::Integer val( 1 );
+    Integer val( 1 );
     std::cout << "insert Integer(1) at 1" << std::endl;
     array.Insert( 1, val );
     std::cout << "array = " << array << std::endl;
 
     std::cout << "create Integer(2)" << std::endl;
-    CS225::Integer val2( 2 );
+    Integer val2( 2 );
     std::cout << "insert Integer(2) at 5" << std::endl;
     array.Insert( 5, val2 );
     std::cout << "array = " << array << std::endl;
 }
 void test1() {
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     std::cout << "create Integer(1)" << std::endl;
-    CS225::Integer val( 1 );
+    Integer val( 1 );
     std::cout << "insert Integer(1) at 5" << std::endl;
     array.Insert( 5, val );
 
-    CS225::Integer val3( 3 );
+    Integer val3( 3 );
     array[3] = val3;
     std::cout << "array = " << array << std::endl;
 }
 void test2() {
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     std::cout << "create Integer(1)" << std::endl;
-    CS225::Integer val( 1 );
+    Integer val( 1 );
     std::cout << "insert Integer(1) at 5" << std::endl;
     array.Insert( 5, val );
 
@@ -46,10 +46,10 @@ void test2() {
 }
 void test3() {
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     std::cout << "create Integer(6)" << std::endl;
-    CS225::Integer val( 6 );
+    Integer val( 6 );
     std::cout << "insert Integer(6) at 3 and 5" << std::endl;
     array[3] = val;
     array[5] = val;
@@ -61,9 +61,9 @@ void test3() {
 
 // tests using copy ctor and assignment
 void test4() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2; // use implicit conversion int->Integer
@@ -71,9 +71,9 @@ void test4() {
 
     std::cout << "array = " << array << std::endl;
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "create shallow copy" << std::endl;
-    CS225::Array array_copy( array ); // shallow copy
+    Array array_copy( array ); // shallow copy
     std::cout << "create shallow copy - done, no output expected" << std::endl;
     
         std::cout << "position    array    array_copy" << std::endl;
@@ -82,9 +82,9 @@ void test4() {
     }
 }
 void test5() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2; // use implicit conversion int->Integer
@@ -92,9 +92,9 @@ void test5() {
 
     std::cout << "array = " << array << std::endl;
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "create shallow copy" << std::endl;
-    CS225::Array array_copy( array ); // shallow copy
+    Array array_copy( array ); // shallow copy
     std::cout << "create shallow copy - done, no output expected" << std::endl;
    
     std::cout << "modify original (should cause deep copy)" << std::endl;
@@ -122,9 +122,9 @@ void test5() {
     }
 }
 void test6() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
@@ -132,7 +132,7 @@ void test6() {
     std::cout << "array = " << array << std::endl;
 
     std::cout << "create another " << std::endl;
-    CS225::Array array2;
+    Array array2;
     for ( int i=0; i<6; ++i ) {
         array2[i] = i+20;
     }
@@ -140,7 +140,7 @@ void test6() {
     std::cout << "-------------------" << std::endl;
     
     
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     array2 = array; 
     std::cout << "create shallow assign - done, no output expected" << std::endl;
    
@@ -169,9 +169,9 @@ void test6() {
     }
 }
 void test7() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
@@ -179,14 +179,14 @@ void test7() {
     std::cout << "array = " << array << std::endl;
 
     std::cout << "create another " << std::endl;
-    CS225::Array array2;
+    Array array2;
     for ( int i=0; i<6; ++i ) {
         array2[i] = i+20;
     }
     std::cout << "array2 = " << array2 << std::endl;
     
     std::cout << "create yet another " << std::endl;
-    CS225::Array array3;
+    Array array3;
     for ( int i=0; i<6; ++i ) {
         array3[i] = i+200;
     }
@@ -194,7 +194,7 @@ void test7() {
     std::cout << "-------------------" << std::endl;
     
     
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     array2 = array3; 
     array = array2; 
     std::cout << "2 shallow assigns - done, no output expected" << std::endl;
@@ -229,21 +229,21 @@ void test7() {
     }
 }
 void test8() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "-------------------" << std::endl;
     std::cout << "create copy " << std::endl;
-    CS225::Array array2( array );
+    Array array2( array );
     
     std::cout << "another copy" << std::endl;
-    CS225::Array array3( array );
+    Array array3( array );
 
     std::cout << std::setw(5) << "pos" << std::setw(8) << "array" << std::setw(8) << "array2" << std::setw(8) << "array3" << std::endl;
     for ( int i=0; i<6; ++i ) {
@@ -276,25 +276,25 @@ void test8() {
     }
 }
 void test9() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "dynamically allocate empty array and initialize it" << std::endl;
-    CS225::Array * p_array = new CS225::Array;
+    Array * p_array = new Array;
 
     for ( int i=0; i<6; ++i ) {
         (*p_array)[i] = i+2;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "-------------------" << std::endl;
     std::cout << "create copy on stack" << std::endl;
-    CS225::Array array2( *p_array );
+    Array array2( *p_array );
 
     std::cout << std::setw(5) << "pos" << std::setw(8) << "p_array" << std::setw(8) << "array2" << std::endl;
     for ( int i=0; i<6; ++i ) {
         std::cout << std::setw(5) << i << std::setw(8) << (*p_array)[i] << std::setw(8) << array2[i] << std::endl;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "delete dynamically allocated array" << std::endl;
     delete p_array;
 
@@ -307,52 +307,52 @@ void test9() {
 }
 void test10() {
     // correctness self-assignment test in Array
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "-------------------" << std::endl;
     std::cout << "create copy " << std::endl;
-    CS225::Array array2( array ); 
+    Array array2( array ); 
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "assign shallow copies" << std::endl;
     array = array2; // aren't they the same ?
 }
 void test11() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "create const copy array" << std::endl;
-    CS225::Array const array_const( array );
+    Array const array_const( array );
 
     std::cout << "array_const[3] is " << array_const[3] << std::endl;
     std::cout << "array_const[5] is " << array_const[5] << std::endl;
     //array_const[5] = 6; // should not compile
 }
 void test12() {
-    CS225::Integer::noise = false;
+    Integer::noise = false;
     std::cout << "create empty array" << std::endl;
-    CS225::Array array;
+    Array array;
 
     for ( int i=0; i<6; ++i ) {
         array[i] = i+2;
     }
 
-    CS225::Integer::noise = true;
+    Integer::noise = true;
     std::cout << "create shallow copy array2" << std::endl;
-    CS225::Array array2( array );
+    Array array2( array );
     
     std::cout << "access aroginal (read), no deep copy required" << std::endl;
     std::cout << "array[5] = " << array[5] << std::endl;

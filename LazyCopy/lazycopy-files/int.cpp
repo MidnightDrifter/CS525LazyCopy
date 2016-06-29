@@ -1,7 +1,6 @@
 #include "int.h"
 #include <iostream> // std::cout
 
-namespace CS225 {
 
     bool Integer::noise = true;
 
@@ -40,4 +39,4 @@ namespace CS225 {
         return out; 
     }
 
-}
+

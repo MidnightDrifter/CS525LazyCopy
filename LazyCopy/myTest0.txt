@@ -5,6 +5,7 @@ insert Integer(1) at 1
 Integer default ctor (0)
 Integer default ctor (0)
 Integer default ctor (0)
+in function CS225::Array::Insert: insert element at position 1
 Integer assignment (0<--1)
 array = 0 1 0 
 create Integer(2)
@@ -24,5 +25,6 @@ Integer default ctor (0)
 Integer assignment (0<--0)
 Integer assignment (0<--1)
 Integer assignment (0<--0)
+in function CS225::Array::Insert: insert element at position 5
 Integer assignment (0<--2)
 array = 0 1 0 0 0 2 0 0 0 0 0 
